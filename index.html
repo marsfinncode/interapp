@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPA Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>GPA Calculator</h1>
+      <p class="subtitle">Scale: 0.0 – 4.0</p>
+    </header>
+
+    <section class="semester-controls">
+      <select id="semesterSelect"></select>
+      <button id="addSemesterBtn" class="btn secondary">+ New Semester</button>
+      <button id="renameSemesterBtn" class="btn secondary">Rename</button>
+      <button id="deleteSemesterBtn" class="btn danger">Delete</button>
+    </section>
+
+    <section class="course-form">
+      <input type="text" id="courseName" placeholder="Course name" />
+      <input type="number" id="courseScore" placeholder="Score (0-100)" min="0" max="100" step="0.1" />
+      <input type="number" id="courseCredits" placeholder="Credit hours" min="0" step="0.5" />
+      <button id="addCourseBtn" class="btn primary">Add Course</button>
+    </section>
+
+    <section class="table-wrap">
+      <table id="courseTable">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Score</th>
+            <th>Grade</th>
+            <th>Points</th>
+            <th>Credits</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="courseTableBody"></tbody>
+      </table>
+      <p id="emptyMsg" class="empty-msg">No courses yet. Add one above.</p>
+    </section>
+
+    <section class="summary">
+      <div class="summary-card">
+        <span class="summary-label">Semester GPA</span>
+        <span id="semesterGpa" class="summary-value">0.00</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">Cumulative GPA</span>
+        <span id="cumulativeGpa" class="summary-value">0.00</span>
+      </div>
+    </section>
+
+    <footer>
+      <p>Grades convert automatically: 93+ A · 90-92 A- · 87-89 B+ · 83-86 B · 80-82 B- · 77-79 C+ · 73-76 C · 70-72 C- · 67-69 D+ · 63-66 D · 60-62 D- · &lt;60 F</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
